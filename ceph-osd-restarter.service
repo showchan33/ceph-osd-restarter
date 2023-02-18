@@ -1,0 +1,12 @@
+[Unit]
+Description = ceph-osd-restarter
+
+[Service]
+ExecStart=/usr/local/bin/ceph-osd-restarter.sh 15 250000
+ExecStop=/bin/kill -WINCH ${MAINPID}
+KillSignal=SIGCONT
+Restart=always
+Type=simple
+
+[Install]
+WantedBy = multi-user.target
