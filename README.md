@@ -1,6 +1,7 @@
 # ceph-osd-restarterの概要
 
-CephのOSDを起動しているマシンで空きメモリが少なくなった場合に、OSDのコンテナを自動で再起動してくれるツールです。
+CephのOSDを起動しているマシンで空きメモリが少なくなった場合に、OSDのコンテナを自動で再起動してくれるツールです。<br><br>
+This tool automatically restarts the Ceph OSD container when free memory runs low on a machine running OSD.
 
 # 背景
 
@@ -10,9 +11,9 @@ CephをRaspberry Pi等、低スペックのマシンで動かしている場合�
 
 * OSはLinuxのみ対応
 * CephのOSDはDockerコンテナで起動していることが前提
-    * 例えば[Cephadm](https://docs.ceph.com/en/latest/cephadm/install/)を使ってインストールした場合は想定した構成となります
+    * 例えば[Cephadm](https://docs.ceph.com/en/latest/cephadm/install/)を使ってインストールした場合の構成を想定しています
 
-# 使い方
+# 使い方(Usage)
 
 ```
 $ ./ceph-osd-restarter.sh [実行間隔(秒)] [利用可能メモリの閾値(KB)]
